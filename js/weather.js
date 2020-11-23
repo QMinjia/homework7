@@ -51,19 +51,15 @@ function gettingJSON(){
 		console.log(loc);
 		temp = json["main"]["temp"];
 		console.log(temp);
+		desp = json["weather"][0]["description"];
+		console.log(desp);
 		tempImg = json["weather"][0]["icon"];
 		console.log(tempImg);
 		$('#tempImg').attr('src', "http://openweathermap.org/img/w/" + tempImg + ".png");
 		$('#tempImg').attr('alt', loc); 
 		document.querySelector("#loc").innerHTML = loc;
-		let unit;		
-		if (format=="imperial") {
-			unit = "Fahrenheit";
-		}
-		else {
-			unit = "Celcius";
-		}
-		document.querySelector("#temp").innerHTML = temp + " " + unit;
+
+		document.querySelector("#temp").innerHTML = temp + " with " + desp;
 		
 		document.querySelector('#forecast').style.display = "block";
     });
