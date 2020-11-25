@@ -55,8 +55,8 @@ function gettingJSON(){
 		console.log(desp);
 		tempImg = json["weather"][0]["icon"];
 		console.log(tempImg);
-		$('#tempImg').attr('src', "http://openweathermap.org/img/w/" + tempImg + ".png");
-		$('#tempImg').attr('alt', loc); 
+		$('#tempImg').attr('src', "http://openweathermap.org/img/wn/"+ tempImg +"@2x.png");
+		$('#tempImg').attr('alt', "icon for " + desp); 
 		document.querySelector("#loc").innerHTML = loc;
 
 		document.querySelector("#temp").innerHTML = temp + " with " + desp;
